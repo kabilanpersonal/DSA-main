@@ -2,6 +2,7 @@ const _ = require('lodash');
 const obj1 = { name: "Alice", age: 25 };
 const obj2 = { name: "Alice", age: 25 };
 const obj3 = { name: "Alice1", age: 25 };
+const obj4 = { name: "Kabilan", age: 22  };
 
 //Shallow Comparisom
 const funcCheck=(a,b)=>{
