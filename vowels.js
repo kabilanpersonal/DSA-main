@@ -1,4 +1,4 @@
-let a="Kabilan"
+let a="KAbilan"
 
 
 //reverse the vowels alone
@@ -17,6 +17,10 @@ function countVowels(str){
     console.log(count);
     return count;
 }
+function countVowelsMatch(str){
+    console.log("Count of Vowels :",str.match(/[aeiou]/gi).length);
+    console.log("Count of Consonents :",str.match(/[^aeiou]/gi).length);
+}
 
 function freqOfVowels(str){
     str= str.replace(/[^aeiouAEIOU]/g,'')
@@ -33,4 +37,4 @@ function freqOfVowels(str){
 countVowels(a);
 freqOfVowels(a);
 reverseVowels(a);
-
+countVowelsMatch(a)

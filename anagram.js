@@ -1,3 +1,4 @@
+const _ = require('lodash')
 const isAnagram = (s1, s2) =>
   s1.length === s2.length &&
   s1.split('').sort().join('') === s2.split('').sort().join('');
@@ -5,18 +6,19 @@ const isAnagram = (s1, s2) =>
 console.log(isAnagram('listen', 'silent')); // true
 console.log(isAnagram('hello', 'world'));   // false
 
-//printing letters 
-function modifyAnagram(a,b){
-  let c= a.split('').sort()
-  let d= b.split('').sort()
-  c.forEach((char,i)=>{
-    if(char !== d[i])
-      console.log(`${d[i]} should be replaced with ${char}`)
+function getFrequency(string) {
+  const freq = {};
+  for (const item of string) {
+    freq[item] = (freq[item] || 0) + 1
   }
-)
-
+  console.log("Array :",Object.entries(freq));
+  return freq
 }
-modifyAnagram("hello","world")
+
+function checkAnagram(a,b){
+  console.log("Using Loadash : ",_.isEqual(getFrequency(a),getFrequency(b)))
+}
+checkAnagram('listen', 'silent');
 
 function groupAnagrams(words) {
   const map = new Map();
@@ -36,6 +38,20 @@ function groupAnagrams(words) {
   // Convert map values to array of groups
   return Array.from(map.values());
 }
+
+function groupAnagramsObj(words){
+  let obj={};
+  for(const word of words){
+    let sorted = word.split('').sort().join('')
+    if(!obj[sorted]){
+      obj[sorted]=[] 
+    }
+     obj[sorted].push(word)
+  }
+  console.log("Group Anagram Using Obj :",obj)
+  console.log("Group Anagram Using Obj Result :",Object.values(obj))
+}
 const words = ["eat", "tea", "tan", "ate", "nat", "bat","tab"];
 const anagramGroups = groupAnagrams(words);
+groupAnagramsObj(words);
 console.log(anagramGroups); // [["eat", "tea", "ate"], ["tan", "nat"], ["bat", "tab"]]
