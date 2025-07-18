@@ -1,8 +1,5 @@
-//count each cha
+//count each character
 let s = "Kabilan";
-
-const map = new Map();
-const obj = {}
 
 //using Obj
 function getFrequency(string) {
@@ -10,6 +7,7 @@ function getFrequency(string) {
   for (const item of string) {
     freq[item] = (freq[item] || 0) + 1
   }
+  console.log("Array :",Object.entries(freq));
   return freq
 }
 
