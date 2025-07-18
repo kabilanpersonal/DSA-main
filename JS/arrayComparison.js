@@ -9,5 +9,5 @@ const arrayCompare = function(a,b){
       
 
 console.log(JSON.stringify(a)===JSON.stringify(b))//true
-console.log(JSON.stringify(c)===JSON.stringify(d))
+console.log(JSON.stringify(c)===JSON.stringify(d))// true
 console.log(arrayCompare(c,d))//false
