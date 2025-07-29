@@ -16,7 +16,9 @@ function getFrequency(string) {
 }
 
 function checkAnagram(a,b){
-  console.log("Using Loadash : ",_.isEqual(getFrequency(a),getFrequency(b)))
+  console.log("Using Loadash : ",_.isEqual(getFrequency(a),getFrequency(b)));
+  console.log("Frequency : ",getFrequency(a))
+  console.log("Frequency : ",getFrequency(b))
 }
 checkAnagram('listen', 'silent');
 
