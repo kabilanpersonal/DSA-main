@@ -4,7 +4,7 @@ let str = 'Boom boom boomer'
 let freq = {};
 let duplicates = [];
 str= str.toLowerCase().match(/[a-z]/g);
-console.log("Updated String: ",str)
+console.log("Updated String: ",str) // ["boom", 'boom', 'boomer']
 
 //find frequency
 str.forEach(element => {

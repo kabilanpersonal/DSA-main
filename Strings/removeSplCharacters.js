@@ -2,7 +2,7 @@
 let str = "[kannane1234@#$%]";
 
 function removeSpecialCharacters(str){
-    console.log("Remove square brackets: ", str.replace(/[\[\]]/g, ''));
+    console.log("Remove square brackets: ", str.replace(/[\[\]]/g, '')); 
     console.log("Without Spl Characters: ",str.replace(/[^a-zA-Z0-9]/g,''));
     console.log("Only Alphabets: ",str.replace(/[^a-zA-Z]/g,''));
     console.log("Remove Vowels: ",str.replace(/[aeiou]/g, ''));
