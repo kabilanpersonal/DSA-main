@@ -21,10 +21,10 @@ console.log("Method 1 : ",duplicates.join(''));
 
 // Method - 2
 
-const duplicateStrings = Object.keys(freq).filter((value)=> freq[value] > 1).join('')
+const duplicateStrings = Object.keys(freq).filter((value)=> freq[value] > 1).join(' ')
 console.log("Method 2 : ",duplicateStrings)
 
 //Method-3
 
 let result = str.filter((item,i, arr)=> arr.indexOf(item) !== i )
-console.log("Method 3 : ",[...new Set(result)].join(''))
+console.log("Method 3 : ",[...new Set(result)].join(' '))
