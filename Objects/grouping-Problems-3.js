@@ -12,3 +12,16 @@ for(let sub of d.subjects){
 return acc;
 },{})
 console.log("Result ",result)
+
+//convert into dictionary -> name: [sub]
+let finalData = sampleData.reduce((acc,d)=>{
+  acc[d.class] = d.subjects
+  return acc;
+},{})
+
+// Alternate way
+// const finalData = Object.fromEntries(
+//   sampleData.map(s => [s.class, s.subjects])
+// );
+
+console.log("Dictionary data:",finalData)
