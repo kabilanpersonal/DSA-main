@@ -16,7 +16,7 @@ for (item in countObj) {
 console.log(countObj) //{ Make: 4, hay: 3, while: 5, sunshine: 8 }
 console.log("Solution 1: ",result)
 
-//Sol -2
+//Sol -2 : return word with highest count in a sentence
 console.log("Solution 2: ",a.split(" ").sort((a,b)=>b.length-a.length)[0])
 
 //Sol-3

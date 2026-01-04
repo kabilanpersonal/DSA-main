@@ -4,12 +4,13 @@ const data = [
     { name: 'Charlie', subjects: ['Physics'] }
   ];
    
-  //Expected
+/*  Expected
   let output=[
     { subject: 'Math', students: ['Alice', 'Bob'] },
     { subject: 'Physics', students: ['Alice', 'Charlie'] },
     { subject: 'Chemistry', students: ['Bob'] }
   ]
+  */
 
   let subjects = [...new Set (data.flatMap(item=>item.subjects))]; //[Math,Physics,Chem]
   let finalResult=[];
@@ -23,3 +24,13 @@ const data = [
     })
   })
   console.log(finalResult)
+
+  //Alternative Solution using Reduce
+  let output = data.reduce((acc,d)=>{
+    for(let sub of d.subjects){
+      if(!acc[sub]) acc[sub]= {subject: sub, students: []}
+      acc[sub].students.push(d.name)
+    }
+    return acc;
+  }, {})
+  console.log("output: ",Object.values(output))

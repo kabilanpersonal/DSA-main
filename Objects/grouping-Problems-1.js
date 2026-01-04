@@ -66,3 +66,10 @@ let groupedUser = a.reduce((acc,u)=> {
     return acc;
 }, {})
 console.log("Grouped User :",groupedUser)
+
+let groupedUser2 = a.reduce((acc,u)=> {
+  if(!acc[u.status]) acc[u.status]= {status: u.status, userDetails:[]}
+  acc[u.status].userDetails.push(u); //(acc[u.status] ||= []).push(u);
+  return acc;
+}, {})
+console.log("Grouped User 2:",Object.values(groupedUser2))
