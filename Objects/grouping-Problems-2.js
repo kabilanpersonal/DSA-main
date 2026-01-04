@@ -8,7 +8,8 @@ const data = [
 //Group items by a property - group by type of this array
 let groupedData = data.reduce((acc, d)=>{
   acc[d.type] = acc[d.type] || [];
-  acc[d.type].push(d)
+  const { type, ...rest } = d;
+  acc[d.type].push(rest)
   return acc
 },{})
 console.log("groupedData: ",groupedData)
