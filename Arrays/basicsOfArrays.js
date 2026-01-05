@@ -32,6 +32,23 @@ let maxScore = Math.max(...Object.values(scores));
 let topStudent = Object.keys(scores).find(key => scores[key] === maxScore);
 console.log("Top Student:", topStudent);
 
+// Alternate solution
+let maxVal = -Infinity;
+let topKeys = [];
+
+for (const k in scores) {
+  const val = scores[k];
+  if (val > maxVal) {
+    maxVal = val;
+    topKeys = [k];
+  } else if (val === maxVal) {
+    topKeys.push(k);
+  }
+}
+
+console.log(maxVal, topKeys); // 92, ["Bob"]
+
+
 // 6. Count occurrences of each element in an array
 const fruits = ['apple', 'banana', 'apple', 'orange', 'banana'];
 let counts = fruits.reduce((acc, fruit) => {
