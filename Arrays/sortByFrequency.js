@@ -1,4 +1,4 @@
-let arr= [1,2,3,2,1,3,2,1,2,4,1,3];
+let arr= [1,2,3,2,1,3,2,1,2,4,1,3,4,4,4];
 
 function sortByFreq(array){
     let freq={}
@@ -7,7 +7,7 @@ function sortByFreq(array){
     }
     return array.sort((a,b)=>{
         if(freq[a]===freq[b]) return a-b  // Optional: secondary sort by value
-        return freq[a]-freq[b]  // Primary sort by frequency
+        return freq[b]-freq[a]  // Primary sort by frequency
     })
 }
 
