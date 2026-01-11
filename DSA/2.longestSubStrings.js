@@ -27,8 +27,8 @@ function longestSubStrings(str){
     let start = 0;
     let longest = '';
     for (let end = 0; end < str.length; end++){
-        let char = str[end];
-        while(mySet.has(char)){
+        // If duplicate found, move left pointer
+        while(mySet.has(str[end])){
             mySet.delete(str[start]);
             start++;
         }
