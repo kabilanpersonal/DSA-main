@@ -8,7 +8,7 @@ function twoSum(arr, target){
 }
 console.log(twoSum([3,2,6], 9))
 
-//using Object
+//using Object (Best and optimised solution)
 
 function twoSum2(arr, target){
     let obj = {};

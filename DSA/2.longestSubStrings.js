@@ -19,7 +19,6 @@ Continue moving forward.
 3. Continue until end reaches the end of the string.
 */
 
-const { max } = require("lodash");
 
 function longestSubStrings(str){
     let mySet = new Set();
