@@ -7,6 +7,12 @@ function removeDuplicatesWithoutInbuild(array){
         freq[item]= (freq[item] || 0)+1
     }
     console.log("Frequency",freq);
+    //Alternate
+    let frquency = array.reduce((acc,cur)=>{
+        acc[cur] = (acc[cur] || 0) + 1
+        return acc;
+    },{})
+    console.log("Frequency using reduce",frquency);
     return Object.keys(freq)
 }
 
