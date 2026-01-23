@@ -28,3 +28,22 @@ function trainBirth(seatNumber) {
     else return "Side Lower Birth";
   }
    console.log(trainBirth(31))// Side Upper Birth
+
+
+   function trainBirth(seatNumber) {
+    const berths = [
+      "Side Upper Birth", // remainder 0
+      "Lower Birth",      // 1
+      "Middle Birth",     // 2
+      "Upper Birth",      // 3
+      "Lower Birth",      // 4
+      "Middle Birth",     // 5
+      "Upper Birth",      // 6
+      "Side Lower Birth"  // 7
+    ];
+  
+    return berths[seatNumber % 8];
+  }
+  
+  console.log(trainBirth(31)); // Side Upper Birth 
+  
