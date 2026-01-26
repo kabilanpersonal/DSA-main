@@ -22,25 +22,6 @@ function checkAnagram(a,b){
 }
 checkAnagram('listen', 'silent');
 
-function groupAnagrams(words) {
-  const map = new Map();
-
-  for (const word of words) {
-    // Sort the characters in the word
-    const sorted = word.split('').sort().join('');
-    
-    // Add word to the correct group
-    if (!map.has(sorted)) {
-      map.set(sorted, []);
-    }
-    map.get(sorted).push(word);
-  }
-  console.log(map);
-
-  // Convert map values to array of groups
-  return Array.from(map.values());
-}
-
 function groupAnagramsObj(words){
   let obj={};
   for(const word of words){
@@ -54,6 +35,4 @@ function groupAnagramsObj(words){
   console.log("Group Anagram Using Obj Result :",Object.values(obj))
 }
 const words = ["eat", "tea", "tan", "ate", "nat", "bat","tab"];
-const anagramGroups = groupAnagrams(words);
-groupAnagramsObj(words);
-console.log(anagramGroups); // [["eat", "tea", "ate"], ["tan", "nat"], ["bat", "tab"]]
+groupAnagramsObj(words); // [["eat", "tea", "ate"], ["tan", "nat"], ["bat", "tab"]]
