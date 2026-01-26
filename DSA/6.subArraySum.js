@@ -12,7 +12,7 @@ function subArraySum(arr, k){
     let sum = 0;
     for (let a of arr){
         sum += a;
-        if(hashMap.has(sum - k)){
+        if(hashMap.has(sum - k)){  //currentSum - previousSum = k
             count += hashMap.get(sum - k)
         }
         hashMap.set(sum, (hashMap.get(sum) || 0) + 1)
