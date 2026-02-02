@@ -25,7 +25,6 @@ const employees = [
 
   //#endregion
 
-
 //#region Group employees by department and calculate total salary per department.
   
 /**
@@ -45,3 +44,72 @@ console.log("Group by Aggregated result", aggregatedResult)
 
 
   //#endregion
+
+  //#region Role → highest paid
+  /**
+   * 
+   {
+  Developer: Rahul,
+  Manager: Priya,
+  Recruiter: Neha,
+  Analyst: Sneha
+}
+   */
+
+ const highestSalGroup = employees.reduce((acc,emp)=>{
+  const role = emp.role
+  if(!acc[role] || emp.salary > acc[role].salary){
+    acc[role] = emp
+  }
+  return acc;
+ },{})
+ console.log("HighestSalGroup:",highestSalGroup)
+ const result = Object.fromEntries(Object.entries(highestSalGroup).map(([role,emp])=> [role, emp.salary]))
+ console.log("Final Result:",result)
+  //#endregion
+
+  //#region Department → min/max salary
+  /**
+   {
+  IT: { min: 70000, max: 90000 },
+  HR: { min: 50000, max: 85000 },
+  Finance: { min: 65000, max: 65000 }
+}
+   */
+  const departMinMax = employees.reduce((acc,emp)=>{
+ const department = emp.department;
+ if(!acc[department]){
+  acc[department] = {min : emp.salary, max: emp.salary}
+ }
+ acc[department].min = Math.min(emp.salary,acc[department].min);
+ acc[department].max = Math.max(emp.salary,acc[department].max)
+ 
+ return acc;
+  },{})
+  console.log("Department Grouped", departMinMax)
+  //#endregion
+
+  //#region Group by skills
+  /**
+   {
+  JS: [Amit, Rahul],
+  React: [Amit],
+  Node: [Rahul],
+  Leadership: [Priya],
+  Management: [Ankit],
+  Communication: [Neha],
+  Excel: [Sneha],
+  SQL: [Sneha]
+}
+   */
+
+const groupedSkills = employees.reduce((acc,emp)=>{
+for(let skill of emp.skills){
+  if (!acc[skill]) acc[skill] = [];
+  acc[skill].push(emp.name) 
+}
+return acc
+},{})
+console.log("Skills Grouped", groupedSkills)
+  //#endregion
+
